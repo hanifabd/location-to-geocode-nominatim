@@ -1,12 +1,10 @@
 from geopy.geocoders import Nominatim
 
 
-geolocator = Nominatim(user_agent="myGeocoder")
+def get_geocode(location_name):
+    geolocator = Nominatim(user_agent="myGeocoder")
+    
+    address_string = "bangkle"
+    location = geolocator.geocode(address_string)
 
-address_string = "sleman yogyakarta"
-location = geolocator.geocode(address_string)
-
-# print(location.altitude)
-# print(location.latitude)
-# print(location.longitude)
-print(location.raw)
+    return location.raw
